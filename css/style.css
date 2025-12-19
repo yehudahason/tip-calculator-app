@@ -4,7 +4,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Space Mono", monospace;
 }
+
 :root {
   --grey-600: #3d6666;
   --grey-550: #547878;
@@ -21,7 +23,6 @@
   --orange-400: #e17052;
   --black: black;
   --white: white;
-  --bg: #c5e4e7;
   --white: #ffffff;
   --dark: #00494d;
   --dark-2: #0f686d;
@@ -57,20 +58,20 @@
 
   font-size: 16px;
 }
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Space Mono", monospace;
-}
 
 body {
-  background: var(--green-200);
+  background: var(--grey-200);
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 85px;
 }
 
+h1 {
+  margin-bottom: 0;
+}
 .app {
   background: var(--white);
   border-radius: 24px;
@@ -79,7 +80,7 @@ body {
   height: 481px;
   /* width: 90%; */
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto auto;
   gap: 32px;
 }
 
@@ -93,8 +94,9 @@ body {
 }
 
 .field label {
-  color: var(--muted);
-  font-weight: 700;
+  color: var(--grey-500);
+  font: var(--text-5);
+  letter-spacing: var(--text-5-ls);
   margin-bottom: 8px;
   display: block;
 }
@@ -114,9 +116,10 @@ body {
   background: transparent;
   width: 100%;
   text-align: right;
-  font-size: 24px;
+  font: var(--text-3);
+  letter-spacing: var(--text-3-ls);
   font-weight: 700;
-  color: var(--dark);
+  color: var(--green-900);
 }
 
 .icon {
@@ -131,19 +134,19 @@ body {
 }
 
 .tip-grid button {
-  background: var(--dark);
+  background: var(--green-900);
   color: white;
   border: none;
   border-radius: 6px;
   padding: 12px;
-  font-size: 20px;
-  font-weight: 700;
+  font: var(--text-5);
+  letter-spacing: var(--text-5-ls);
   cursor: pointer;
 }
 
 .tip-grid button.active {
-  background: var(--accent);
-  color: var(--dark);
+  background: var(--green-400);
+  color: var(--green-900);
 }
 
 .tip-grid .custom {
@@ -153,12 +156,12 @@ body {
   text-align: center;
   font-size: 20px;
   font-weight: 700;
-  color: var(--dark);
+  color: var(--green-900);
 }
 
 /* RIGHT */
 .result {
-  background: var(--dark);
+  background: var(--green-900);
   border-radius: 16px;
   padding: 32px;
   display: flex;
@@ -176,7 +179,8 @@ body {
 
 .result-row p {
   color: white;
-  font-weight: 700;
+  font: var(--text-5);
+  letter-spacing: var(--text-5-ls);
 }
 
 .result-row span {
@@ -185,25 +189,64 @@ body {
 }
 
 .result-row h2 {
-  color: var(--accent);
-  font-size: 48px;
+  color: var(--green-400);
+  font: var(--text-1);
+  letter-spacing: var(--text-1-ls);
 }
 
 .reset {
   margin-top: auto;
-  background: var(--accent);
+  background: var(--green-400);
   border: none;
   padding: 12px;
   border-radius: 6px;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--dark);
+  font: var(--text-4);
+  letter-spacing: var(--text-4-ls);
+  color: var(--green-900);
   cursor: pointer;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .app {
+    width: 608px;
+    height: 800px;
     grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .controls {
+    width: 457px;
+    height: 352px;
+  }
+  .result {
+    width: 457px;
+    height: 300px;
+  }
+}
+/* RESPONSIVE */
+@media (max-width: 570px) {
+  .app {
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 0 5px;
+  }
+  .controls {
+    width: 90%;
+    height: 432px;
+  }
+  .result {
+    width: 95%;
+    padding: 28px;
+    height: 257px;
+  }
+  .result-row h2 {
+    font: var(--text-2);
+    letter-spacing: var(--text-2-ls);
+  }
+  .field label {
+    font: var(--text-3);
+    letter-spacing: var(--text-3-ls);
+    margin: 2px 0;
   }
 }

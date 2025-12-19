@@ -82,6 +82,8 @@ h1 {
   display: grid;
   grid-template-columns: auto auto;
   gap: 32px;
+  justify-items: center;
+  align-items: center;
 }
 
 /* LEFT */
@@ -225,7 +227,7 @@ h1 {
   }
 }
 /* RESPONSIVE */
-@media (max-width: 570px) {
+@media (max-width: 540px) {
   .app {
     width: 100%;
     grid-template-columns: 1fr;

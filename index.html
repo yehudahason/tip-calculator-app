@@ -12,6 +12,7 @@
 
     <title>Frontend Mentor | Tip calculator app</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
   </head>
   <body>
     <h1><img src="./images/logo.svg" alt="" /></h1>
@@ -25,7 +26,7 @@
             <span class="icon"
               ><img src="./images/icon-dollar.svg" alt=""
             /></span>
-            <input type="number" placeholder="0" class="no-spinner" />
+            <input type="number" placeholder="0" class="no-spinner" id="bill" />
           </div>
         </div>
 
@@ -34,23 +35,31 @@
           <label>Select Tip %</label>
 
           <div class="tip-grid">
-            <button>5%</button>
-            <button>10%</button>
-            <button class="active">15%</button>
-            <button>25%</button>
-            <button>50%</button>
-            <input class="custom" type="number" placeholder="Custom" />
+            <button id="tip5">5%</button>
+            <button id="tip10">10%</button>
+            <button id="tip15">15%</button>
+            <button id="tip25">25%</button>
+            <button id="tip50">50%</button>
+            <input
+              class="custom"
+              type="number"
+              placeholder="Custom"
+              id="customtip"
+            />
           </div>
         </div>
 
         <!-- PEOPLE -->
         <div class="field">
-          <label>Number of People</label>
-          <div class="input-wrap">
+          <label class="nop">
+            <span>Number of People</span>
+            <span class="alert">Can't be zero</span></label
+          >
+          <div class="input-wrap alert2">
             <span class="icon"
               ><img src="./images/icon-person.svg" alt=""
             /></span>
-            <input type="number" value="5" class="no-spinner" />
+            <input type="number" value="5" class="" id="nop" />
           </div>
         </div>
       </section>
@@ -62,15 +71,15 @@
             <p>Tip Amount</p>
             <span>/ person</span>
           </div>
-          <h2>$4.27</h2>
+          <h2 class="tip">$4.27</h2>
         </div>
 
-        <div class="result-row">
+        <div class="result-row row2">
           <div>
             <p>Total</p>
             <span>/ person</span>
           </div>
-          <h2>$32.79</h2>
+          <h2 class="result-t">$32.79</h2>
         </div>
 
         <button class="reset">RESET</button>

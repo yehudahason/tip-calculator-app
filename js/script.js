@@ -57,6 +57,10 @@ customtip.addEventListener("input", (e) => {
 });
 
 resetBtn.addEventListener("click", () => {
+  resetAll();
+});
+
+function resetAll() {
   bill.value = 0;
   nop.value = 1;
   customtip.value = 0;
@@ -67,11 +71,16 @@ resetBtn.addEventListener("click", () => {
   resultTotal.innerHTML = "$0";
   resetBtn.classList.add("clear");
   alertB(false);
-});
+}
 function calcBill(e) {
   resetBtn.classList.remove("clear");
   updateBtn();
   let TotalBill = bill.value;
+  if (TotalBill > 100000) {
+    alert("maximum 100000");
+    resetAll();
+    return;
+  }
   let numberOfPeople = Number(nop.value);
   if (numberOfPeople === 0) {
     alertB(true);

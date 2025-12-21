@@ -297,6 +297,9 @@ button.choose {
   .result-row.row2 {
     margin-top: 0;
   }
+  .result {
+    justify-self: center;
+  }
 }
 /* RESPONSIVE */
 @media (max-width: 525px) {

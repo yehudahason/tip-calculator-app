@@ -53,8 +53,8 @@ resetBtn.addEventListener("click", () => {
   tip = 0.15;
   activeBtn = tip15;
   updateBtn();
-  resultTip.innerHTML = "0";
-  resultTotal.innerHTML = "0";
+  resultTip.innerHTML = "$0";
+  resultTotal.innerHTML = "$0";
   resetBtn.classList.add("clear");
   alertB(false);
 });
@@ -71,8 +71,8 @@ function calcBill(e) {
   let totalEach = eachTip + TotalBill / numberOfPeople;
   eachTip = eachTip.toFixed(2);
   totalEach = totalEach.toFixed(2);
-  resultTip.innerHTML = eachTip;
-  resultTotal.innerHTML = totalEach;
+  resultTip.innerHTML = `$${eachTip}`;
+  resultTotal.innerHTML = `$${totalEach}`;
 }
 
 function updateBtn() {

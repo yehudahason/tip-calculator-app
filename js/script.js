@@ -14,25 +14,31 @@ const resetBtn = document.querySelector(".reset");
 const allBtn = document.querySelectorAll("button");
 
 let tip = 0.15;
+let activeBtn;
 
 tip5.addEventListener("click", (e) => {
   tip = 0.05;
+  activeBtn = e.target;
   calcBill(e);
 });
 tip10.addEventListener("click", (e) => {
   tip = 0.1;
+  activeBtn = e.target;
   calcBill(e);
 });
 tip15.addEventListener("click", (e) => {
   tip = 0.15;
+  activeBtn = e.target;
   calcBill(e);
 });
 tip25.addEventListener("click", (e) => {
   tip = 0.25;
+  activeBtn = e.target;
   calcBill(e);
 });
 tip50.addEventListener("click", (e) => {
   tip = 0.5;
+  activeBtn = e.target;
   calcBill(e);
 });
 customtip.addEventListener("change", (e) => {
@@ -44,6 +50,9 @@ resetBtn.addEventListener("click", () => {
   bill.value = 0;
   nop.value = 1;
   customtip.value = 0;
+  tip = 0.15;
+  activeBtn = tip15;
+  updateBtn();
   resultTip.innerHTML = "0";
   resultTotal.innerHTML = "0";
   resetBtn.classList.add("clear");
@@ -51,8 +60,7 @@ resetBtn.addEventListener("click", () => {
 });
 function calcBill(e) {
   resetBtn.classList.remove("clear");
-  allBtn.forEach((item) => item.classList.remove("choose"));
-  e.target.classList.add("choose");
+  updateBtn();
   let TotalBill = bill.value;
   let numberOfPeople = Number(nop.value);
   if (numberOfPeople === 0) {
@@ -65,6 +73,13 @@ function calcBill(e) {
   totalEach = totalEach.toFixed(2);
   resultTip.innerHTML = eachTip;
   resultTotal.innerHTML = totalEach;
+}
+
+function updateBtn() {
+  allBtn.forEach((item) => item.classList.remove("choose"));
+  if (activeBtn) {
+    activeBtn.classList.add("choose");
+  }
 }
 function alertB(active) {
   if (active) {

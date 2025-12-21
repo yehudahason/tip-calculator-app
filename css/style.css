@@ -144,6 +144,9 @@ h1 {
   color: var(--green-900);
   /* padding: 6px 0px; */
 }
+.input-wrap input::placeholder {
+  color: var(--grey-200);
+}
 .input-wrap.active {
   border: 2px solid var(--orange-400);
 }

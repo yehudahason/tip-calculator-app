@@ -15,7 +15,7 @@ const allBtn = document.querySelectorAll("button");
 
 let tip = 0;
 let activeBtn = null;
-bill.addEventListener("change", (e) => {
+bill.addEventListener("input", (e) => {
   calcBill();
   updateBtn();
 });
@@ -44,7 +44,7 @@ tip50.addEventListener("click", (e) => {
   activeBtn = e.target;
   calcBill(e);
 });
-customtip.addEventListener("change", (e) => {
+customtip.addEventListener("input", (e) => {
   tip = Number(e.target.value) / 100;
   calcBill();
 });
@@ -86,15 +86,17 @@ function updateBtn() {
 }
 function alertB(active) {
   if (active) {
+    inputwrap.classList.remove("ok");
     banner.classList.add("active");
     inputwrap.classList.add("active");
   } else {
     banner.classList.remove("active");
     inputwrap.classList.remove("active");
+    inputwrap.classList.add("ok");
   }
 }
 
-nop.addEventListener("change", (e) => {
+nop.addEventListener("input", (e) => {
   number = Number(e.target.value);
   if (number <= 0) {
     alertB(true);

@@ -110,6 +110,10 @@ h1 {
   justify-content: space-between;
 }
 
+.field input {
+  font: var(--text-3);
+  letter-spacing: var(--text-3-ls);
+}
 .nop .alert {
   visibility: hidden;
 }

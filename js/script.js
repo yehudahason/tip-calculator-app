@@ -77,7 +77,7 @@ function calcBill(e) {
   updateBtn();
   let TotalBill = bill.value;
   if (TotalBill > 100000) {
-    alert("maximum 100000");
+    alert("Maximum 100000$ Bill!");
     resetAll();
     return;
   }

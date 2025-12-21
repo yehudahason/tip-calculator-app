@@ -66,11 +66,11 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 87px;
+  gap: 65px;
 }
 
 h1 {
-  margin-bottom: 0;
+  margin-top: -50px;
 }
 .app {
   background: var(--white);
@@ -232,6 +232,8 @@ h1 {
 }
 
 button {
+  font: var(--text-3);
+  letter-spacing: var(--text-3-ls);
   transition: all 0.1s ease-in;
 }
 button:hover {

@@ -13,8 +13,8 @@ const resultTotal = document.querySelector(".result-total");
 const resetBtn = document.querySelector(".reset");
 const allBtn = document.querySelectorAll("button");
 
-let tip = 0.15;
-let activeBtn = tip15;
+let tip = 0;
+let activeBtn = null;
 bill.addEventListener("change", (e) => {
   calcBill();
   updateBtn();

@@ -44,6 +44,13 @@ tip50.addEventListener("click", (e) => {
   activeBtn = e.target;
   calcBill(e);
 });
+
+customtip.addEventListener("focus", (e) => {
+  tip = Number(e.target.value) / 100;
+  allBtn.forEach((item) => item.classList.remove("choose"));
+  activeBtn = null;
+  calcBill();
+});
 customtip.addEventListener("input", (e) => {
   tip = Number(e.target.value) / 100;
   calcBill();

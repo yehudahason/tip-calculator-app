@@ -8,24 +8,65 @@ const customtip = document.getElementById("customtip");
 const nop = document.getElementById("nop");
 const banner = document.querySelector(".alert");
 const inputwrap = document.querySelector(".alert2");
+const resultTip = document.querySelector(".result-tip");
+const resultTotal = document.querySelector(".result-total");
+const resetBtn = document.querySelector(".reset");
+const allBtn = document.querySelectorAll("button");
+
+let tip = 0.15;
 
 tip5.addEventListener("click", (e) => {
-  calcBill(5);
+  tip = 0.05;
+  calcBill(e);
 });
 tip10.addEventListener("click", (e) => {
-  calcBill(10);
+  tip = 0.1;
+  calcBill(e);
 });
 tip15.addEventListener("click", (e) => {
-  calcBill(15);
+  tip = 0.15;
+  calcBill(e);
 });
 tip25.addEventListener("click", (e) => {
-  calcBill(25);
+  tip = 0.25;
+  calcBill(e);
 });
 tip50.addEventListener("click", (e) => {
-  calcBill(50);
+  tip = 0.5;
+  calcBill(e);
+});
+customtip.addEventListener("change", (e) => {
+  tip = Number(e.target.value) / 100;
+  calcBill();
 });
 
-function alert(active) {
+resetBtn.addEventListener("click", () => {
+  bill.value = 0;
+  nop.value = 1;
+  customtip.value = 0;
+  resultTip.innerHTML = "0";
+  resultTotal.innerHTML = "0";
+  resetBtn.classList.add("clear");
+  alertB(false);
+});
+function calcBill(e) {
+  resetBtn.classList.remove("clear");
+  allBtn.forEach((item) => item.classList.remove("choose"));
+  e.target.classList.add("choose");
+  let TotalBill = bill.value;
+  let numberOfPeople = Number(nop.value);
+  if (numberOfPeople === 0) {
+    alertB(true);
+    return;
+  }
+  let eachTip = (TotalBill * tip) / numberOfPeople;
+  let totalEach = eachTip + TotalBill / numberOfPeople;
+  eachTip = eachTip.toFixed(2);
+  totalEach = totalEach.toFixed(2);
+  resultTip.innerHTML = eachTip;
+  resultTotal.innerHTML = totalEach;
+}
+function alertB(active) {
   if (active) {
     banner.classList.add("active");
     inputwrap.classList.add("active");
@@ -37,9 +78,10 @@ function alert(active) {
 
 nop.addEventListener("change", (e) => {
   number = Number(e.target.value);
-  if (number === 0) {
-    alert(true);
+  if (number <= 0) {
+    alertB(true);
   } else {
-    alert(false);
+    alertB(false);
+    calcBill(e);
   }
 });

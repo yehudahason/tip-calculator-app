@@ -140,7 +140,7 @@ h1 {
   /* padding: 6px 0px; */
 }
 .input-wrap.active {
-  border: 1px solid var(--orange-400);
+  border: 2px solid var(--orange-400);
 }
 .icon {
   color: var(--muted);
@@ -183,7 +183,7 @@ h1 {
 .result {
   background: var(--green-900);
   border-radius: 16px;
-  padding: 32px;
+  padding: 38px 40px;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -217,7 +217,7 @@ h1 {
 }
 
 .result-row.row2 {
-  margin-top: -120px;
+  margin-top: -100px;
 }
 .reset {
   /* margin-top: auto; */
@@ -231,6 +231,21 @@ h1 {
   cursor: pointer;
 }
 
+button {
+  transition: all 0.1s ease-in;
+}
+button:hover {
+  background-color: var(--green-200);
+  color: var(--green-900);
+}
+button.clear {
+  background-color: var(--green-750);
+  color: var(--green-800);
+}
+button.choose {
+  background-color: var(--green-400);
+  color: var(--green-900);
+}
 /* Chrome, Edge, Safari */
 .no-spinner::-webkit-inner-spin-button,
 .no-spinner::-webkit-outer-spin-button {

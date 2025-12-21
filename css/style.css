@@ -159,8 +159,8 @@ h1 {
   border: none;
   border-radius: 6px;
   padding: 12px;
-  font: var(--text-5);
-  letter-spacing: var(--text-5-ls);
+  font: var(--text-3);
+  letter-spacing: var(--text-3-ls);
   cursor: pointer;
 }
 
@@ -232,8 +232,6 @@ h1 {
 }
 
 button {
-  font: var(--text-3);
-  letter-spacing: var(--text-3-ls);
   transition: all 0.1s ease-in;
 }
 button:hover {

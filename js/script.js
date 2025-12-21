@@ -14,8 +14,11 @@ const resetBtn = document.querySelector(".reset");
 const allBtn = document.querySelectorAll("button");
 
 let tip = 0.15;
-let activeBtn;
-
+let activeBtn = tip15;
+bill.addEventListener("change", (e) => {
+  calcBill();
+  updateBtn();
+});
 tip5.addEventListener("click", (e) => {
   tip = 0.05;
   activeBtn = e.target;

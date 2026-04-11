@@ -6,7 +6,7 @@ This is a solution to the [Tip calculator app challenge on Frontend Mentor](http
 
 ### Links
 
-- Live Site URL: [GitHub Pages](https://yehudahason.github.io/tip-calculator-app/)
+- My solution at : [GitHub Pages](https://yehudahason.github.io/tip-calculator-app/)
 
 ### Built with
 
